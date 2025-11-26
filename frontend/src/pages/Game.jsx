@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import "../css/Game.css";
 import { useLocation } from "react-router-dom";
 
-const socket = io("http://localhost:3000"); // single socket instance
+const socket = io(`${import.meta.env.VITE_HOST}`); // single socket instance
 
 export default function Game() {
   const location = useLocation();

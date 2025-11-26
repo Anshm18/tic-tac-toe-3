@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
 
-const socket = io('http://localhost:3000'); // create only ONCE
+const socket = io(`${import.meta.env.VITE_HOST}`); // create only ONCE
 
 export default function Console() {
   const [players, setPlayers] = useState([]);
