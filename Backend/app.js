@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 app.use('/user', userRoutes);
 
-const appServer = app.listen(3000, () => {
+const appServer = app.listen(process.env.PORT, () => {
   console.log('Server is running on port 3000');
 });
 
