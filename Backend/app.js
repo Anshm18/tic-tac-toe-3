@@ -7,7 +7,6 @@ import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
 import { Server } from 'socket.io';
 
-const io = new Server(appServer, { cors: { origin: 'https://tic-tac-toe-3-39hu.vercel.app/' } });
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -24,6 +23,17 @@ app.use('/user', userRoutes);
 
 const appServer = app.listen(3000, () => {
   console.log('Server is running on port 3000');
+});
+
+const io = new Server(appServer, {
+  cors: {
+    origin: [
+      "https://tic-tac-toe-3-39hu.vercel.app",
+      "http://localhost:5173"
+    ],
+    methods: ["GET", "POST"],
+    credentials: true
+  }
 });
 
 // Store users and rooms
