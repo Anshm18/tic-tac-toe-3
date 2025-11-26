@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/ticTacToe')
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
@@ -25,7 +25,7 @@ const appServer = app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
 
-const io = new Server(appServer, { cors: { origin: '*' } });
+const io = new Server(appServer, { cors: { origin: 'https://tic-tac-toe-3-39hu.vercel.app/' } });
 // Store users and rooms
 const users = {}; // { socketId: username }
 const rooms = {}; // { roomId: { players: [{id,name,symbol}], board: Array(9), turn: "O" } }
