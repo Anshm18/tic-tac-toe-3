@@ -28,7 +28,7 @@ const appServer = app.listen(process.env.PORT, () => {
 const io = new Server(appServer, {
   cors: {
     origin: [
-      "https://tic-tac-toe-3-39hu.vercel.app",
+      "https://tic-tac-toe-3-1.onrender.com",
       "http://localhost:5173"
     ],
     methods: ["GET", "POST"],
