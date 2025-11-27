@@ -20,8 +20,6 @@ function App() {
         autoClose={2000}
         theme="colored"
       />
-      <BrowserRouter>
-      
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -32,7 +30,6 @@ function App() {
           <Game />
         </ProtectedRoute>} />
       </Routes>
-      </BrowserRouter>
     </>
   )
 }
