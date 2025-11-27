@@ -1,4 +1,4 @@
-import { Routes, Route,  } from 'react-router-dom';
+import { Routes, Route, BrowserRouter,  } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Console from './pages/Console';
@@ -20,6 +20,8 @@ function App() {
         autoClose={2000}
         theme="colored"
       />
+      <BrowserRouter>
+      
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -30,6 +32,7 @@ function App() {
           <Game />
         </ProtectedRoute>} />
       </Routes>
+      </BrowserRouter>
     </>
   )
 }
